@@ -117,5 +117,9 @@ app.delete("/users/:id", async (req, res) => {
 
 // Start server
 app.use(cors({
-  origin: "*"
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
 }));
+
+app.options("*", cors());
