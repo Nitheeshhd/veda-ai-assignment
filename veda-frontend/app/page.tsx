@@ -51,7 +51,7 @@ export default function Home() {
   console.log("Form Data:", form);
 
   try {
-    const res = await fetch("http://localhost:5000/user", {
+    const res = await fetch("https://veda-ai-assignment-old3.onrender.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
