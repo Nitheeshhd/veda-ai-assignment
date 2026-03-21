@@ -10,9 +10,8 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "*"
 }));
-app.use(express.json());
 
 // Debug middleware
 app.use((req, res, next) => {
@@ -114,10 +113,8 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
+const PORT = process.env.PORT || 5000;
 
-// Start server
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type"]
-}));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
